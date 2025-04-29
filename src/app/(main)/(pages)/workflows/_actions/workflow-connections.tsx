@@ -152,6 +152,25 @@ export const onCreateWorkflow = async (name: string, description: string) => {
   const user = await currentUser()
 
   if (user) {
+    // First check if user exists in database
+    const dbUser = await db.user.findUnique({
+      where: {
+        clerkId: user.id,
+      },
+    })
+
+    if (!dbUser) {
+      // Create user if doesn't exist
+      await db.user.create({
+        data: {
+          clerkId: user.id,
+          email: user.emailAddresses[0].emailAddress,
+          name: user.firstName + ' ' + user.lastName,
+          profileImage: user.imageUrl,
+        },
+      })
+    }
+
     //create new workflow
     const workflow = await db.workflows.create({
       data: {
