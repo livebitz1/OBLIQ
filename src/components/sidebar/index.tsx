@@ -61,7 +61,7 @@ const MenuOptions = ({ className }: Props) => {
             className="flex font-bold text-2xl hover:text-primary transition-colors"
             href="/"
           >
-            {!isCollapsed ? 'fuzzie.' : 'f.'}
+            {!isCollapsed ? 'OBLIQ.' : 'O.'}
           </Link>
         </motion.div>
 

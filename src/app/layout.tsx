@@ -12,7 +12,7 @@ import DominoLoader from '@/components/ui/domino-loader'
 const font = DM_Sans({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Fuzzie.',
+  title: 'OBLIQ.',
   description: 'Automate Your Work With Obliq.',
 }
 
@@ -31,7 +31,7 @@ export default function RootLayout({
             attribute="class"
             defaultTheme="dark"
             enableSystem={false}
-            storageKey="fuzzie-theme"
+            storageKey="obliq-theme"
           >
             <Suspense fallback={<DominoLoader />}>
               <BillingProvider>
